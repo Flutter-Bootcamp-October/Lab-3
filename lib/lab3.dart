@@ -30,8 +30,9 @@ int ReadNumber(String message) {
 bool IsAdult(int age) {
   if (age >= 18) {
     return true;
-  } else
+  } else {
     return false;
+  }
 }
 
 String ReadText(String message) {

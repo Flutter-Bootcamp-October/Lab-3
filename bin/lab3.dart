@@ -2,7 +2,7 @@ import 'package:lab3/lab3.dart';
 
 void main() {
   calculateTheVolumeOfTheCubeFrom1To4v2(ReadNumber("Enter a number:"));
-  ReadText("Enter your name: ");
+  print(ReadText("Enter your name: "));
 
   if (IsAdult(ReadNumber("Enter your age: "))) {
     print("You can drive");
