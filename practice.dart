@@ -17,9 +17,13 @@ void main() {
     }
   } while (!HasAge);
   if (age! <= 18) {
-    print("Sorry, you are under 18 years old");
+    print("=================================");
+    print("Hi $name : \n Sorry, you are under 18 years old");
+    print("=================================");
   } else {
-    print("You are adult");
+    print("=================================");
+    print("Hi $name : \n You are adult");
+    print("=================================");
   }
   // Write a Dart program that takes a `number` from a user, and prints the cube from 1 to the given `number` using a loop.
   print("enter a number please: ");
@@ -33,9 +37,11 @@ void main() {
     }
   } while (!Hasnumber);
   {
+    print("=================================");
     for (int i = 1; i <= number!; i++) {
       num cube = i * i * i;
       print("number is :$i cube is $cube");
     }
+    print("=================================");
   }
 }
