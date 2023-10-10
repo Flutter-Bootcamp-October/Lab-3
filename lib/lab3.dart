@@ -27,17 +27,17 @@ int ReadNumber(String message) {
   return number;
 }
 
-String ReadText(String message) {
-  stdout.write(message);
-
-  String text = stdin.readLineSync() ?? "".trim();
-
-  return text;
-}
-
 bool IsAdult(int age) {
   if (age >= 18) {
     return true;
   } else
     return false;
+}
+
+String ReadText(String message) {
+  stdout.write(message);
+
+  String text = (stdin.readLineSync() ?? "").trim();
+
+  return text;
 }
