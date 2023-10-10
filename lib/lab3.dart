@@ -15,7 +15,7 @@ int ReadNumber(String message) {
   stdout.write(message);
   while (!isValidInput) {
     try {
-      String input = stdin.readLineSync() ?? "";
+      String input = (stdin.readLineSync() ?? "").trim();
       number = int.parse(input);
 
       isValidInput = true;
@@ -29,7 +29,9 @@ int ReadNumber(String message) {
 
 String ReadText(String message) {
   stdout.write(message);
-  String text = stdin.readLineSync() ?? "";
+
+  String text = stdin.readLineSync() ?? "".trim();
+
   return text;
 }
 
