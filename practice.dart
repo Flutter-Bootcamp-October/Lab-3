@@ -37,11 +37,9 @@ void main() {
     }
   } while (!Hasnumber);
   {
-    print("=================================");
     for (int i = 1; i <= number!; i++) {
       num cube = i * i * i;
       print("number is :$i cube is $cube");
     }
-    print("=================================");
   }
 }
