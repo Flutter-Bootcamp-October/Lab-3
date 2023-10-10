@@ -4,7 +4,7 @@ import 'dart:math';
 void calculateTheVolumeOfTheCubeFrom1To4v2(int number) {
   for (int i = 1; i <= 4; i++) {
     double result = pow(number.toDouble(), i.toDouble()).toDouble();
-    print("Number is: $number and cube of $i is: $result");
+    print("Number is: $number and pow of $i is: $result");
   }
 }
 
@@ -13,11 +13,13 @@ int ReadNumber(String message) {
   bool isValidInput = false;
 
   stdout.write(message);
+
   while (!isValidInput) {
     try {
       String input = (stdin.readLineSync() ?? "").trim();
       number = int.parse(input);
-
+      stdout.write(number);
+      print("\n");
       isValidInput = true;
     } catch (e) {
       print("Invalid input. Please enter a valid number.");
