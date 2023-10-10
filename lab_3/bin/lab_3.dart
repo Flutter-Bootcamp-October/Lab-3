@@ -10,14 +10,16 @@ import 'dart:io';
 import 'dart:math';
 
 /*
-  This function takes a number from the user and prints out the cube of 1 to the
+  This function takes a number from the user and prints out the cube from 1 to the
   given number.
  */
 void cubes() {
   bool gotNumber = false;
   do {
     try {
+      print('----------------');
       print('Enter a number:');
+      print('----------------');
       num number = num.parse(stdin.readLineSync()!);
       if (number > 0) {
         num cube;
@@ -27,38 +29,49 @@ void cubes() {
         }
         gotNumber = true;
       } else {
-        print('Number need to be greater than 0');
+        // if number is less than zero
+        print('======================================');
+        print('|| Number need to be greater than 0 ||');
+        print('======================================');
+        print("");
       }
     } catch (error) {
-      print('Please enter digits only');
+      // if input is null or not a number
+      print('=================================');
+      print('|| Input not vaild, try again! ||');
+      print('=================================');
+      print("");
     }
   } while (!gotNumber);
 }
 
 /*
-  This function takes name and age of the user and checks if the user is under 18.
+  This function takes name and age and checks if the age is under 18.
  */
 void names() {
-  var name;
   bool ageIsvalid = false;
   bool nameIsvalid = false;
-  print('Enter your name:');
-  name = stdin.readLineSync();
-  do {
-    try {
-      print('Enter your name:');
-      name = stdin.readLineSync();
+  var name;
+  while (!nameIsvalid) {
+    print('----------------');
+    print('Enter your name:');
+    print('----------------');
+    name = stdin.readLineSync();
+    if (name.isNotEmpty) {
       nameIsvalid = true;
-    } catch (error) {
-      print('Please enter valid name');
     }
-  } while (!nameIsvalid);
+  }
   do {
     try {
+      print('----------------');
       print('Enter your age:');
+      print('----------------');
       num age = num.parse(stdin.readLineSync()!);
       if (age < 1) {
-        print('Please enter valid age');
+        // age less than zero condition
+        print('============================');
+        print('|| Please enter valid age ||');
+        print('============================');
       } else {
         if (age < 18) {
           print('Sorry, you are under 18 years old.');
@@ -66,12 +79,14 @@ void names() {
         ageIsvalid = true;
       }
     } catch (error) {
-      print('Please enter valid age');
+      print('============================');
+      print('|| Please enter valid age ||');
+      print('============================');
     }
   } while (!ageIsvalid);
 }
 
 void main(List<String> arguments) {
   cubes();
-  // names();
+  names();
 }
